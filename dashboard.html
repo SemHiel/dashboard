@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="style1.css">
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="menu-icon">
+        <strong> &#9776;</strong>
+      </div>
+      <header class="header">
+        <div class="header_search">Zoek...</div>
+        <div class="header_avatar">Logout</div>
+      </header>
+      <aside class="aside">
+        <div class="aside_close-icon">
+          <strong>&times;</strong>
+        </div>
+        <ul class="aside_list">
+          <li class="aside_list-item">Meer Gegevens</li>
+          <li class="aside_list-item">Huis Aanpassen</li>
+          <li class="aside_list-item">License</li>
+          <li class="aside_list-item">Account</li>
+          <li class="aside_list-item">Instellingen</li>
+        </ul>
+      </aside>
+      <main class="main">
+        <div class="main_overview">
+          <div class="overview_card">
+            <div class="overview_card-info">GasVerbruik</div>
+            <div class="overview_card-icon">Meer Info</div>
+          </div>
+          <div class="overview_card">
+            <div class="overview_card-info">EnergieVerbruik</div>
+            <div class="overview_card-icon">Meer Info</div>
+          </div>
+          <div class="overview_card">
+            <div class="overview_card-info">Water Verbruik</div>
+            <div class="overview_card-icon">Meer Info</div>
+          </div>
+          <div class="overview_card">
+            <div class="overview_card-info">Temperatuur<div id="m-booked-bl-simple-26995"> <div class="booked-wzs-160-110 weather-customize" style="background-color:#137AE9;width:160px;" id="width1"> <div class="booked-wzs-160-110_in"> <a target="_blank" class="booked-wzs-top-160-110" href="https://www.booked.net/"><img src="//s.bookcdn.com/images/letter/s5.gif" alt="booked.net" /></a> <div class="booked-wzs-160-data"> <div class="booked-wzs-160-left-img wrz-18"></div> <div class="booked-wzs-160-right"> <div class="booked-wzs-day-deck"> <div class="booked-wzs-day-val"> <div class="booked-wzs-day-number"><span class="plus">+</span>6</div> <div class="booked-wzs-day-dergee"> <div class="booked-wzs-day-dergee-val">&deg;</div> <div class="booked-wzs-day-dergee-name">C</div> </div> </div> <div class="booked-wzs-day"> <div class="booked-wzs-day-d"><span class="plus">+</span>7&deg;</div> <div class="booked-wzs-day-n"><span class="plus">+</span>4&deg;</div> </div> </div> <div class="booked-wzs-160-info"> <div class="booked-wzs-160-city">Amsterdam</div> <div class="booked-wzs-160-date">Tuesday, 16</div> </div> </div> </div> <a target="_blank" href="https://www.booked.net/weather/amsterdam-18051" class="booked-wzs-bottom-160-110"> <div class="booked-wzs-center"><span class="booked-wzs-bottom-l"> See 7-Day Forecast</span></div> </a> </div> </div> </div><script type="text/javascript"> var css_file=document.createElement("link"); var widgetUrl = location.href; css_file.setAttribute("rel","stylesheet"); css_file.setAttribute("type","text/css"); css_file.setAttribute("href",'https://s.bookcdn.com/css/w/booked-wzs-widget-160.css?v=0.0.1'); document.getElementsByTagName("head")[0].appendChild(css_file); function setWidgetData(data) { if(typeof(data) != 'undefined' && data.results.length > 0) { for(var i = 0; i < data.results.length; ++i) { var objMainBlock = document.getElementById('m-booked-bl-simple-26995'); if(objMainBlock !== null) { var copyBlock = document.getElementById('m-bookew-weather-copy-'+data.results[i].widget_type); objMainBlock.innerHTML = data.results[i].html_code; if(copyBlock !== null) objMainBlock.appendChild(copyBlock); } } } else { alert('data=undefined||data.results is empty'); } } var widgetSrc = "https://widgets.booked.net/weather/info?action=get_weather_info;ver=6;cityID=18051;type=1;scode=124;ltid=3457;domid=w209;anc_id=29616;countday=undefined;cmetric=1;wlangID=1;color=137AE9;wwidth=160;header_color=ffffff;text_color=333333;link_color=08488D;border_form=1;footer_color=ffffff;footer_text_color=333333;transparent=0;v=0.0.1";widgetSrc += ';ref=' + widgetUrl;widgetSrc += ';wstrackId=345186';var weatherBookedScript = document.createElement("script"); weatherBookedScript.setAttribute("type", "text/javascript"); weatherBookedScript.src = widgetSrc; document.body.appendChild(weatherBookedScript) </script><!-- weather widget end --></div>
+          </div>
+        </div>
+
+        <div class="main_cards">
+          <div class="card">
+            Overview 
+            <p id="standen"></p></div>
+          <div class="card">Temperatuur Aanpassen</div>
+          <div class="card">Lampen Aanpassen</div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer_copyright">&copy;2021</div>
+        <div class="footer_byline">Gemaakt met &hearts;</div>
+      </footer>
+    </div>
+    <script type="text/javascript">
+      const menuIcon = document.querySelector('.menu-icon');
+      const aside = document.querySelector('.aside');
+      const asideClose = document.querySelector('.aside_close-icon');
+
+      function toggle(el, className) {
+        if (el.classList.contains(className)) {
+          el.classList.remove(className);
+        } else {
+          el.classList.add(className);
+        }
+      }
+
+      menuIcon.addEventListener('click', function() {
+        toggle(aside, 'active');
+      });
+
+      asideClose.addEventListener('click', function() {
+        toggle(aside, 'active');
+      });
+    </script>
+    <script src="scripts/request.js"></script>
+  </body>
+</html>
